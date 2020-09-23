@@ -2,7 +2,7 @@ function [Aeq,beq] = equality_constraints_rotation(RT,Rc,k,J)
 
 R = RT*Rc;
 
-RPY = tr2rpy(R);
+RPY = rotm2eul(R,'XYZ');
 thetax = RPY(1); thetay = RPY(2); thetaz = RPY(3);
 
 thetadot = thetadot_zrot(thetax,thetay,thetaz,k);
